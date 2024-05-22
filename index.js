@@ -2,21 +2,16 @@
 const { DisconnectReason, useMultiFileAuthState } = require('@whiskeysockets/baileys');
 const { text } = require('express');
 const makeWASocket = require('@whiskeysockets/baileys').default;
-const { Boom } = require("@hapi/boom");
 
 async function connectionLogic() {
     const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys');
     const sock = makeWASocket({
         // Konfigurasi tambahan bisa ditambahkan di sini
-        // logger:,
         printQRInTerminal: true,
         auth: state
     });
 
-    sock.ev.on('creds.update', saveCreds);
-
     sock.ev.on('connection.update', async (update) => {
-        console.log(update, "<<<<<<<<<<")
         const { connection, lastDisconnect, qr } = update || {};
 
         if (qr) {
@@ -24,23 +19,10 @@ async function connectionLogic() {
         }
 
         if (connection === 'close') {
-            const shouldReconnect =
-                (lastDisconnect.error instanceof Boom) &&
-                lastDisconnect.error.output.statusCode !== DisconnectReason.loggedOut;
-            console.log(
-                "connection closed due to ",
-                lastDisconnect.error,
-                ", reconnecting ",
-                shouldReconnect
-            );
+            const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
             if (shouldReconnect) {
-                console.log('Reconnecting...');
-                connectionLogic(); // Recursively call the connection logic to reconnect
-            } else {
-                console.log('Connection closed and not reconnecting');
+                connectionLogic();
             }
-        } else if (connection === 'open') {
-            console.log('Connection opened');
         }
     });
 
@@ -189,10 +171,10 @@ async function connectionLogic() {
                 }
                 else if (message.message.conversation === '7') {
                     // Kirim gambar yang telah disiapkan
-                    const responseMessage1 = {
-                        text: 'Setiap kantor jasa pasti ada biaya jasanya. Biaya jasanya adalah 10%-15% dari Total Piutang Per aplikasi. Tapi Tim kami akan berupaya mencarikan modal dari pinjol dengan cara yang aman. Agar Anda dapat membayar Jasa kami tanpa harus keluar uang pribadi. Dana yang masuk ke rekening dari pengerjaan Tim akan di bagi 2 yaitu 50% sebagai modal bagi Anda. Dan 50% lagi adalah fee untuk Tim. Semua Aplikasi yang di kerjakan oleh Tim, sudah include pembackupan. Anda hanya perlu membayar biaya backup aplikasi yang Anda cairkan sendiri dengan data asli, menggunakan dana 50% tadi.'
-                    };
-                    sock.sendMessage(message.key.remoteJid, responseMessage1, { quoted: message });
+                    // const responseMessage1 = {
+                    //     text: 'Setiap kantor jasa pasti ada biaya jasanya. Biaya jasanya adalah 10%-15% dari Total Piutang Per aplikasi. Tapi Tim kami akan berupaya mencarikan modal dari pinjol dengan cara yang aman. Agar Anda dapat membayar Jasa kami tanpa harus keluar uang pribadi. Dana yang masuk ke rekening dari pengerjaan Tim akan di bagi 2 yaitu 50% sebagai modal bagi Anda. Dan 50% lagi adalah fee untuk Tim. Semua Aplikasi yang di kerjakan oleh Tim, sudah include pembackupan. Anda hanya perlu membayar biaya backup aplikasi yang Anda cairkan sendiri dengan data asli, menggunakan dana 50% tadi.'
+                    // };
+                    sock.sendMessage(message.key.remoteJid, { audio: { url: "uhuy.mp3" }, mimetype: 'audio/mp4' }, { url: "uhuy.mp3" }, { quoted: message });
 
                     setTimeout(() => {
                         // Kirim pesan kedua
@@ -259,15 +241,7 @@ async function connectionLogic() {
         });
     });
 
-
-    setInterval(async () => {
-        if (sock.state === 'close') {
-            console.log('Connection closed. Attempting to reconnect...');
-            connectionLogic();
-        }
-    }, 60000); // Check every minute
+    sock.ev.on('creds.update', saveCreds);
 }
 
 connectionLogic();
-
-
