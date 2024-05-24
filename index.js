@@ -2,25 +2,36 @@
 const { DisconnectReason, useMultiFileAuthState } = require('@whiskeysockets/baileys');
 const { text } = require('express');
 const makeWASocket = require('@whiskeysockets/baileys').default;
+const fs = require('fs-extra'); // fs-extra untuk operasi file
+const path = require('path');
+
+const authFolderPath = path.join(__dirname, 'auth_info_baileys');
 
 async function connectionLogic() {
-    const { state, saveCreds } = await useMultiFileAuthState('auth_info_baileys');
+    const { state, saveCreds } = await useMultiFileAuthState(authFolderPath);
     const sock = makeWASocket({
-        // Konfigurasi tambahan bisa ditambahkan di sini
         printQRInTerminal: true,
         auth: state
     });
+
+    sock.ev.on('creds.update', saveCreds);
 
     sock.ev.on('connection.update', async (update) => {
         const { connection, lastDisconnect, qr } = update || {};
 
         if (qr) {
-            console.log(qr);
+            console.log('Scan the QR code:', qr);
         }
 
         if (connection === 'close') {
-            const shouldReconnect = lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut;
-            if (shouldReconnect) {
+            const shouldReconnect = (lastDisconnect?.error?.output?.statusCode !== DisconnectReason.loggedOut);
+
+            if (lastDisconnect?.error?.output?.statusCode === DisconnectReason.loggedOut) {
+                // Hapus folder auth_info_baileys dan regenerasi QR code
+                console.log('Logged out, clearing auth folder and regenerating QR code');
+                await fs.remove(authFolderPath);
+                connectionLogic();
+            } else if (shouldReconnect) {
                 connectionLogic();
             }
         }
