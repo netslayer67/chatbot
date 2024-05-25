@@ -66,7 +66,7 @@ async function connectionLogic() {
 
             const validNumbers = ['1', '2', '3', '4', '5', '6'];
 
-            const conversation = message.message.conversation;
+            const conversation = message.message?.conversation;
 
 
             if (message.message && message.message.conversation) {
