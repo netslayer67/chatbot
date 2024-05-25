@@ -196,6 +196,13 @@ async function connectionLogic() {
 
                         // 
                     }
+                    const key = {
+                        remoteJid: message.key.remoteJid,
+                        id: message.key.id, // id dari pesan yang ingin ditandai sebagai dibaca
+                        participant: message.key.participant, // ID pengguna yang mengirim pesan (undefined untuk chat individu)
+                    };
+
+                    sock.readMessages([key]);
                 }
                 // Jika pesan adalah "1"
                 else if (/^\d+$/.test(conversation) && !validNumbers.includes(conversation)) {
@@ -227,15 +234,16 @@ async function connectionLogic() {
 
                     // Kirim pesan balasan
                     sock.sendMessage(message.key.remoteJid, responseMessage,);
+                    const key = {
+                        remoteJid: message.key.remoteJid,
+                        id: message.key.id, // id dari pesan yang ingin ditandai sebagai dibaca
+                        participant: message.key.participant, // ID pengguna yang mengirim pesan (undefined untuk chat individu)
+                    };
+
+                    sock.readMessages([key]);
                 }
 
-                const key = {
-                    remoteJid: message.key.remoteJid,
-                    id: message.key.id, // id dari pesan yang ingin ditandai sebagai dibaca
-                    participant: message.key.participant, // ID pengguna yang mengirim pesan (undefined untuk chat individu)
-                };
 
-                sock.readMessages([key]);
             } else {
 
             }
