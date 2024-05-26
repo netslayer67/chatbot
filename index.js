@@ -99,7 +99,14 @@ async function connectionLogic() {
                             caption: '*Malahayati Consultant* adalah lembaga resmi yang memiliki legalitas perusahaan dan berbadan hukum di bawah naungan\n*PT. MALAHAYATI NUSANTARA RAYA*',
                             viewOnce: false
                         };
-                        sock.sendMessage(message.key.remoteJid, responseMessage1, { audio: { url: "./legals.opus", mimetype: 'audio/mp4' } });
+                        sock.sendMessage(message.key.remoteJid, responseMessage1);
+                        setTimeout(() => {
+
+                            // const responseMessage2 = {
+                            //     text: 'Alamat Kantor Pusat: Jl. Mampang Prpt. Raya No.2 6, RT.6/RW.6, Mampang Prpt., Kec. Mampang Prpt., Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12790\n(https://maps.app.goo.gl/WMZCaA9A9VodYh8DA)\n\n*Alamat Kantor Cabang Meruya* : Jl. Meruya Ilir Raya No.8B, RT.7/RW.6, Meruya Utara, Kec. Kembangan, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta 11620\n(https://maps.app.goo.gl/cF3DNjDdMsu6D9AS8)\n\n*Alamat Kantor Cabang Bekasi* : Komplek Ruko, Jl. Pesona Anggrek Harapan No.15A Blok A05, Harapan Jaya, Kec. Bekasi Utara, Kota Bks, Jawa Barat 17124\n(https://maps.app.goo.gl/61rg6aMbjbPHq1ja8)\n\n*Alamat Kantor Cabang Sukabumi* : Ruko Permata, Jl. Lkr. Sel., RT.018/RW.004, Cibatu, Kec. Cisaat, Kabupaten Sukabumi, Jawa Barat 43152\n(https://maps.app.goo.gl/JRUdW5qTzwvwbZbB7)\n\n*Alamat Kantor Cabang Probolinggo* : Jl. Probolinggo - Wonorejo, Kebonsari Wetan, Kec. Kanigaran, Kota Probolinggo, Jawa Timur 67214\n(https://maps.app.goo.gl/f39jS7mxA9PEGP666)\n\n*Alamat Kantor Cabang Serang* : Jl. Jayadiningrat Jl. Kaujon Kidul No.1, Serang, Kec. Serang, Kota Serang, Banten 42116\n(https://maps.app.goo.gl/mYX4YYy9cTRM18pr9)'
+                            // };
+                            sock.sendMessage(message.key.remoteJid, { audio: { url: "./legals.opus", mimetype: 'audio/mp4' } });
+                        }, 2000)
                         setTimeout(() => {
 
                             const responseMessage2 = {
