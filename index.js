@@ -201,7 +201,7 @@ async function connectionLogic() {
                         // const responseMessage1 = {
                         //     text: 'Silahkan klik link dibawah yang telah disiapkan\n\nhttps://bit.ly/Format-Pendaftaran_',
                         // };
-                        sock.sendMessage(message.key.remoteJid, { audio: { url: "./legals.opus" }, mimetype: 'audio/mp4' });
+                        sock.sendMessage(message.key.remoteJid, { audio: { url: "./legals.opus", mimetype: 'audio/mp4' } });
                         // Tandai pesan sebagai dibaca
 
                         // 
