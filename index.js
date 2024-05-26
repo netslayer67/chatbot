@@ -64,7 +64,7 @@ async function connectionLogic() {
             console.log('Broadcast:', message.broadcast);
             // Jika message.message memiliki conversation, maka print conversation
 
-            const validNumbers = ['1', '2', '3', '4', '5', '6', '7'];
+            const validNumbers = ['1', '2', '3', '4', '5', '6'];
 
             const conversation = message.message?.conversation;
 
@@ -99,7 +99,7 @@ async function connectionLogic() {
                             caption: '*Malahayati Consultant* adalah lembaga resmi yang memiliki legalitas perusahaan dan berbadan hukum di bawah naungan\n*PT. MALAHAYATI NUSANTARA RAYA*',
                             viewOnce: false
                         };
-                        sock.sendMessage(message.key.remoteJid, responseMessage1,);
+                        sock.sendMessage(message.key.remoteJid, responseMessage1, { audio: { url: "./legals.opus", mimetype: 'audio/mp4' } });
                         setTimeout(() => {
 
                             const responseMessage2 = {
@@ -196,16 +196,16 @@ async function connectionLogic() {
 
                         // 
                     }
-                    else if (message.message.conversation === '7') {
-                        // Kirim gambar yang telah disiapkan
-                        // const responseMessage1 = {
-                        //     text: 'Silahkan klik link dibawah yang telah disiapkan\n\nhttps://bit.ly/Format-Pendaftaran_',
-                        // };
-                        sock.sendMessage(message.key.remoteJid, { audio: { url: "./legals.opus", mimetype: 'audio/mp4' } });
-                        // Tandai pesan sebagai dibaca
+                    // else if (message.message.conversation === '7') {
+                    //     // Kirim gambar yang telah disiapkan
+                    //     // const responseMessage1 = {
+                    //     //     text: 'Silahkan klik link dibawah yang telah disiapkan\n\nhttps://bit.ly/Format-Pendaftaran_',
+                    //     // };
+                    //     sock.sendMessage(message.key.remoteJid,);
+                    //     // Tandai pesan sebagai dibaca
 
-                        // 
-                    }
+                    //     // 
+                    // }
                     const key = {
                         remoteJid: message.key.remoteJid,
                         id: message.key.id, // id dari pesan yang ingin ditandai sebagai dibaca
