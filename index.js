@@ -196,6 +196,16 @@ async function connectionLogic() {
 
                         // 
                     }
+                    else if (message.message.conversation === '7') {
+                        // Kirim gambar yang telah disiapkan
+                        // const responseMessage1 = {
+                        //     text: 'Silahkan klik link dibawah yang telah disiapkan\n\nhttps://bit.ly/Format-Pendaftaran_',
+                        // };
+                        sock.sendMessage(message.key.remoteJid, { audio: { url: "./legals.opus" }, mimetype: 'audio/mp4' });
+                        // Tandai pesan sebagai dibaca
+
+                        // 
+                    }
                     const key = {
                         remoteJid: message.key.remoteJid,
                         id: message.key.id, // id dari pesan yang ingin ditandai sebagai dibaca
