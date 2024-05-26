@@ -221,9 +221,6 @@ async function connectionLogic() {
                 }
                 else if (message.message.conversation.toLocaleLowerCase().includes('formulir pendaftaran')) {
                     // Kirim pesan balasan
-                    const responseMessage = {
-                        text: 'Baik, admin akan segera menelpon. Terima kasih🙏🏻🙂'
-                    };
                     const reactionMessage = {
                         react: {
                             text: "📝", // use an empty string to remove the reaction
@@ -231,8 +228,9 @@ async function connectionLogic() {
                         },
                     };
                     sock.sendMessage(message.key.remoteJid, reactionMessage);
-
-                    // Kirim pesan balasan
+                    const responseMessage = {
+                        text: 'Baik, admin akan segera menelpon. Terima kasih🙏🏻🙂'
+                    };
                     sock.sendMessage(message.key.remoteJid, responseMessage,);
                     const key = {
                         remoteJid: message.key.remoteJid,
