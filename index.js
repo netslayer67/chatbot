@@ -4,7 +4,6 @@ const { text } = require('express');
 const makeWASocket = require('@whiskeysockets/baileys').default;
 const fs = require('fs-extra'); // fs-extra untuk operasi file
 const path = require('path');
-const ffmpeg = require('fluent-ffmpeg');
 
 const authFolderPath = path.join(__dirname, 'auth_info_baileys');
 
@@ -59,15 +58,14 @@ async function connectionLogic() {
         // Iterate through each message in the array
         messageInfoUpsert.messages.forEach(async (message) => {
             // Print message details
-            console.log(message.message, "<<<<<<<<<")
-            // console.log('pesan4 =>');
-            // console.log('Key:', message.key);
-            // console.log('Timestamp:', message.messageTimestamp);
-            // console.log('Push Name:', message.pushName);
-            // console.log('Broadcast:', message.broadcast);
+            console.log('pesan4 =>');
+            console.log('Key:', message.key);
+            console.log('Timestamp:', message.messageTimestamp);
+            console.log('Push Name:', message.pushName);
+            console.log('Broadcast:', message.broadcast);
             // Jika message.message memiliki conversation, maka print conversation
 
-            const validNumbers = ['1', '2', '3', '4', '5', '6', "7"];
+            const validNumbers = ['1', '2', '3', '4', '5', '6'];
 
             const conversation = message.message?.conversation;
 
@@ -195,16 +193,6 @@ async function connectionLogic() {
                             text: 'Silahkan klik link dibawah yang telah disiapkan\n\nhttps://bit.ly/Format-Pendaftaran_',
                         };
                         sock.sendMessage(message.key.remoteJid, responseMessage1);
-                        // Tandai pesan sebagai dibaca
-
-                        // 
-                    }
-                    else if (message.message.conversation === '7') {
-                        // Kirim gambar yang telah disiapkan
-                        ffmpeg().input("./Media/test.wav").toFormat("mp3").on("end", () => { console.log('done') }).on("error", (error) => { console.log("ERRORWW: ", error) })
-                        // console.log(responseMessage1)
-                        sock.sendMessage(message.key.remoteJid, { audio: { url: "./Media/uhuy.mp3" }, mimetype: 'audio/mp4' },
-                            true);
                         // Tandai pesan sebagai dibaca
 
                         // 
