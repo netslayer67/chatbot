@@ -64,7 +64,7 @@ async function connectionLogic() {
             console.log('Broadcast:', message.broadcast);
             // Jika message.message memiliki conversation, maka print conversation
 
-            const validNumbers = ['1', '2', '3', '4', '5', '6'];
+            const validNumbers = ['1', '2', '3', '4', '5', '6', '7'];
 
             const conversation = message.message?.conversation;
 
