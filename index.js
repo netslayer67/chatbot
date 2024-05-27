@@ -244,9 +244,8 @@ async function connectionLogic() {
                             key: message.key,
                         },
                     };
+                    sock.sendMessage(message.key.remoteJid, reactionMessage);
                     setTimeout(() => {
-
-                        sock.sendMessage(message.key.remoteJid, reactionMessage);
                         const responseMessage = {
                             text: 'Baik, admin akan segera menelpon. Terima kasih🙏🏻🙂'
                         };
