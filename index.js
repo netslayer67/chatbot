@@ -84,7 +84,7 @@ async function connectionLogic() {
                     setTimeout(() => {
                         // Kirim pesan kedua
                         const responseMessage2 = {
-                            text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*"
+                            text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*\nAdmin akan segera merespon setelah pengisian Formulir Pendaftaran"
                         };
                         sock.sendMessage(message.key.remoteJid, responseMessage2);
                     }, 500);
@@ -117,7 +117,7 @@ async function connectionLogic() {
                         // setTimeout(() => {
                         //     // Kirim pesan kedua
                         //     const responseMessage3 = {
-                        //         text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*"
+                        //         text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*\nAdmin akan segera merespon setelah pengisian Formulir Pendaftaran"
                         //     };
                         //     sock.sendMessage(message.key.remoteJid, responseMessage3);
                         // }, 2000);
@@ -135,7 +135,7 @@ async function connectionLogic() {
                         setTimeout(() => {
                             // Kirim pesan kedua
                             const responseMessage2 = {
-                                text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*"
+                                text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*\nAdmin akan segera merespon setelah pengisian Formulir Pendaftaran"
                             };
                             sock.sendMessage(message.key.remoteJid, responseMessage2);
                         }, 1000);
@@ -150,7 +150,7 @@ async function connectionLogic() {
                         setTimeout(() => {
                             // Kirim pesan kedua
                             const responseMessage2 = {
-                                text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*"
+                                text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*\nAdmin akan segera merespon setelah pengisian Formulir Pendaftaran"
                             };
                             sock.sendMessage(message.key.remoteJid, responseMessage2);
                         }, 1000);
@@ -165,7 +165,7 @@ async function connectionLogic() {
                         setTimeout(() => {
                             // Kirim pesan kedua
                             const responseMessage2 = {
-                                text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*"
+                                text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*\nAdmin akan segera merespon setelah pengisian Formulir Pendaftaran"
                             };
                             sock.sendMessage(message.key.remoteJid, responseMessage2);
                         }, 1000);
@@ -180,7 +180,7 @@ async function connectionLogic() {
                         // setTimeout(() => {
                         //     // Kirim pesan kedua
                         //     // const responseMessage2 = {
-                        //     //     text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*"
+                        //     //     text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*\nAdmin akan segera merespon setelah pengisian Formulir Pendaftaran"
                         //     // };
                         //     sock.sendMessage(message.key.remoteJid, { audio: { url: "uhuy.mp3", mimetype: 'audio/mp4' } }, { url: "uhuy.mp3" });
                         // }, 500);
@@ -188,7 +188,7 @@ async function connectionLogic() {
                         setTimeout(() => {
                             // Kirim pesan kedua
                             const responseMessage2 = {
-                                text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*"
+                                text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*\nAdmin akan segera merespon setelah pengisian Formulir Pendaftaran"
                             };
                             sock.sendMessage(message.key.remoteJid, responseMessage2);
                         }, 1000);
@@ -231,7 +231,7 @@ async function connectionLogic() {
                     setTimeout(() => {
                         // Kirim pesan kedua
                         const responseMessage2 = {
-                            text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*"
+                            text: "Silakan pilih angka di bawah ini:\n*1️⃣. Legalitas Perusahaan dan Alamat Kantor*\n*2️⃣. Sistem Pengerjaan di Kantor*\n*3️⃣. Sistem pengerjaan di luar kota*\n*4️⃣. Jika sudah galbay apakah masih bisa?*\n*5️⃣. Berapa Ongkos Jasanya?*\n*6️⃣. Isi Formulir Pendaftaran*\nAdmin akan segera merespon setelah pengisian Formulir Pendaftaran"
                         };
                         sock.sendMessage(message.key.remoteJid, responseMessage2);
                     }, 1000);
