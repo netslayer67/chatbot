@@ -244,11 +244,14 @@ async function connectionLogic() {
                             key: message.key,
                         },
                     };
-                    sock.sendMessage(message.key.remoteJid, reactionMessage);
-                    const responseMessage = {
-                        text: 'Baik, admin akan segera menelpon. Terima kasih🙏🏻🙂'
-                    };
-                    sock.sendMessage(message.key.remoteJid, responseMessage,);
+                    setTimeout(() => {
+
+                        sock.sendMessage(message.key.remoteJid, reactionMessage);
+                        const responseMessage = {
+                            text: 'Baik, admin akan segera menelpon. Terima kasih🙏🏻🙂'
+                        };
+                        sock.sendMessage(message.key.remoteJid, responseMessage,);
+                    }, 1000)
                     const key = {
                         remoteJid: message.key.remoteJid,
                         id: message.key.id, // id dari pesan yang ingin ditandai sebagai dibaca
