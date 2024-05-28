@@ -196,13 +196,56 @@ async function connectionLogic() {
                     else if (message.message.conversation === '6') {
                         // Kirim gambar yang telah disiapkan
                         const responseMessage1 = {
-                            text: 'Silahkan klik link dibawah yang telah disiapkan\n\nhttps://bit.ly/Format-Pendaftaran_',
+                            text: '*FORMULIR PENDAFTARAN*\n\n' +
+                                'Nama : \n' +
+                                'Usia : \n' +
+                                'Lokasi : \n' +
+                                'Nomor Hp : \n' +
+                                'Jenis Hp : \n' +
+                                'RAM HP (khusus Android) :\n' +
+                                'Simcard : (masih ada/ sudah tidak ada)\n' +
+                                'Rekomendasi : Handoko\n\n' +
+                                '𝗔𝗣𝗟𝗜𝗞𝗔𝗦𝗜 𝗬𝗔𝗡𝗚 𝗠𝗔𝗦𝗜𝗛 𝗕𝗘𝗥𝗝𝗔𝗟𝗔𝗡 / 𝗗𝗜𝗥𝗔𝗪𝗔𝗧 :\n' +
+                                '1. Nama aplikasi : \n' +
+                                '     Total Limit : \n' +
+                                '     Tgl, bln jatuh tempo : \n' +
+                                '     Sisa angsuran : Rp.\n\n' +
+                                '2. Nama aplikasi : \n' +
+                                '     Total limit : \n' +
+                                '     Tgl, bln jatuh tempo : \n' +
+                                '     Sisa angsuran : Rp.\n\n' +
+                                '3. Nama aplikasi : \n' +
+                                '    Total limit :\n' +
+                                '    Tgl, bln jatuh tempo : \n' +
+                                '    Sisa angsuran : Rp.\n\n' +
+                                '4. Nama aplikasi : \n' +
+                                '    Total limit : \n' +
+                                '    Tgl, bln jatuh tempo : \n' +
+                                '    Sisa angsuran : Rp.\n\n' +
+                                '5. Nama aplikasi : \n' +
+                                '    Total limit : \n' +
+                                '    Tgl, bln jatuh tempo : \n' +
+                                '    Sisa angsuran : Rp.\n\n' +
+                                '6. Nama aplikasi : \n' +
+                                '    Total limit : \n' +
+                                '    Tgl, bln jatuh tempo : \n' +
+                                '    Sisa angsuran : Rp.\n\n' +
+                                '𝗔𝗣𝗟𝗜𝗞𝗔𝗦𝗜 𝗬𝗔𝗡𝗚 𝗦𝗨𝗗𝗔𝗛 𝗚𝗔𝗚𝗔𝗟 𝗕𝗔𝗬𝗔𝗥\n' +
+                                '(wajib diisi jika ada)\n' +
+                                '1. \n' +
+                                '2. \n' +
+                                '3. \n\n' +
+                                '𝗔𝗣𝗟𝗜𝗞𝗔𝗦𝗜 𝗬𝗔𝗡𝗚 𝗧𝗘𝗥𝗧𝗢𝗟𝗔𝗞 𝗗𝗔𝗟𝗔𝗠 𝗣𝗘𝗡𝗚𝗔𝗝𝗨𝗔𝗡 𝗦𝗘𝗡𝗗𝗜𝗥𝗜 𝗣𝗔𝗗𝗔 𝟭 𝗕𝗨𝗟𝗔𝗡 𝗧𝗘𝗥𝗔𝗞𝗛𝗜𝗥\n' +
+                                '(wajib diisi jika ada)\n' +
+                                '1. \n' +
+                                '2. \n' +
+                                '3. \n' +
+                                '4.'
                         };
                         sock.sendMessage(message.key.remoteJid, responseMessage1);
                         // Tandai pesan sebagai dibaca
-
-                        // 
                     }
+
                     // else if (message.message.conversation === '7') {
                     //     // Kirim gambar yang telah disiapkan
                     //     // const responseMessage1 = {
