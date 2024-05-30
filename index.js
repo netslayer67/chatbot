@@ -203,7 +203,7 @@ async function connectionLogic() {
                                 'Jenis Hp : \n' +
                                 'RAM HP (khusus Android) :\n' +
                                 'Simcard : (masih ada/ sudah tidak ada)\n' +
-                                'Rekomendasi : *Syahrial Anhar*\n\n' +
+                                'Rekomendasi : \n\n' +
                                 '𝗔𝗣𝗟𝗜𝗞𝗔𝗦𝗜 𝗬𝗔𝗡𝗚 𝗠𝗔𝗦𝗜𝗛 𝗕𝗘𝗥𝗝𝗔𝗟𝗔𝗡 / 𝗗𝗜𝗥𝗔𝗪𝗔𝗧 :\n' +
                                 '1. Nama aplikasi : \n' +
                                 '     Total Limit : \n' +
