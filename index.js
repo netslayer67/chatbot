@@ -62,10 +62,9 @@ async function connectionLogic() {
             console.log('Timestamp:', message.messageTimestamp);
             console.log('Push Name:', message.pushName);
             console.log('Broadcast:', message.broadcast);
-            // Jika message.message memiliki conversation, maka print conversation
 
             const validNumbers = ['1', '2', '3', '4', '5', '6'];
-
+            const invalidNumbers = ['7', '8', '9', '0'];
             const conversation = message.message?.conversation;
 
 
@@ -204,7 +203,7 @@ async function connectionLogic() {
                                 'Jenis Hp : \n' +
                                 'RAM HP (khusus Android) :\n' +
                                 'Simcard : (masih ada/ sudah tidak ada)\n' +
-                                'Rekomendasi : Handoko\n\n' +
+                                'Rekomendasi : *Syahrial Anhar*\n\n' +
                                 '𝗔𝗣𝗟𝗜𝗞𝗔𝗦𝗜 𝗬𝗔𝗡𝗚 𝗠𝗔𝗦𝗜𝗛 𝗕𝗘𝗥𝗝𝗔𝗟𝗔𝗡 / 𝗗𝗜𝗥𝗔𝗪𝗔𝗧 :\n' +
                                 '1. Nama aplikasi : \n' +
                                 '     Total Limit : \n' +
@@ -265,7 +264,7 @@ async function connectionLogic() {
                     sock.readMessages([key]);
                 }
                 // Jika pesan adalah "1"
-                else if (/^\d+$/.test(conversation) && !validNumbers.includes(conversation)) {
+                else if (invalidNumbers.includes(conversation)) {
                     // Pesan adalah angka tetapi bukan 1-6
                     const responseMessage1 = {
                         text: 'Mohon maaf pilihanmu tidak tersedia🙏',
@@ -302,8 +301,6 @@ async function connectionLogic() {
 
                     sock.readMessages([key]);
                 }
-
-
             } else {
 
             }
